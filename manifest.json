@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Gmail Outlook Reply Cleaner",
+  "version": "4.6",
+  "description": "Gmailの返信時にOutlookメールの重複部分を削除（URLエンコード完全対応）",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://mail.google.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
